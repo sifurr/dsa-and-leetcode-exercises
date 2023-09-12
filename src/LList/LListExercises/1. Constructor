@@ -1,0 +1,25 @@
+Write a Java class called LinkedList that represents a singly linked list.
+
+The class should have the following properties and methods:
+
+A private Node object called head that points to the first node in the linked list.
+
+A private Node object called tail that points to the last node in the linked list.
+
+A private integer attribute called length that represents the number of nodes in the linked list.
+
+A nested Node class with the following attributes:
+
+An integer attribute called value that stores the value of the node.
+
+A Node object called next that points to the next node in the linked list.
+
+A constructor that accepts an integer value as an argument and initializes the value attribute.
+
+A constructor for the LinkedList class that accepts an integer value as an argument and performs the following tasks:
+
+Create a new Node object called newNode with the given value.
+
+Set both the head and tail pointers of the list to the newNode.
+
+Set the length attribute of the list to 1.

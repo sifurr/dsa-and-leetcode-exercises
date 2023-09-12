@@ -36,6 +36,38 @@ public class LList {
         length++;
     }
 
+    public Node removeLast(){
+        if (length == 0){
+            return null;
+        }
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null){
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre;
+        tail.next = null;
+        length--;
+        // if there is only one node then after decrementing we check again
+        if (length == 0){
+            head = null;
+            tail = null;
+        }
+        return temp;
+    }
+
+    public void prepend(int value){
+        Node newNode = new Node(value);
+        if (length==0){
+            head = newNode;
+            tail = newNode;
+        }
+        newNode.next= head;
+        head = newNode;
+        length++;
+    }
+
     public void printList(){
         Node temp = head;
         while(temp != null){
@@ -45,11 +77,11 @@ public class LList {
     }
 
     public void getHead() {
-        System.out.println(head.value);
+        System.out.println("Head: " + head.value);
     }
 
     public void getTail() {
-        System.out.println(tail.value);
+        System.out.println("Tail: " + tail.value);
     }
 
     public void getLength() {
