@@ -94,6 +94,54 @@ public class LList {
         return temp;
     }
 
+    public boolean set(int index, int value){
+        Node temp = get(index);
+        if(temp == null){
+            return false;
+        }
+        temp.value = value;
+        return true;
+    }
+
+    public boolean insert(int index, int value){
+        if (index < 0 || index > length){
+            return false;
+        }
+        Node newNode = new Node(value);
+        if (index == 0){
+            prepend(value);
+            return true;
+        }
+        if (index == length){
+            append(value);
+            return true;
+        }
+        Node previousNode = get(index - 1);
+        Node nextNode = get(index);
+        newNode.next = nextNode;
+        previousNode.next = newNode;
+        length++;
+        return true;
+    }
+
+    public Node remove(int index){
+        if (index < 0 || index > length){
+            return null;
+        }
+        if (index == 0){
+            removeFirst();
+        }
+        if(index == length){
+            removeLast();
+        }
+        Node previousNode = get(index - 1);
+        Node temp = previousNode.next;
+        previousNode.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     public void printList(){
         Node temp = head;
         while(temp != null){

@@ -9,7 +9,8 @@ public class Main {
         myLinkedList.append(5);
         myLinkedList.append(6);
 
-        System.out.println(myLinkedList.get(3).value);
+        System.out.println(myLinkedList.remove(1).value);
+
         System.out.println();
         myLinkedList.printList();
 
