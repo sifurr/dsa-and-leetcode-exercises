@@ -3,13 +3,14 @@ package LList;
 public class Main {
     public static void main(String[] args) {
         LList myLinkedList = new LList(2);
+
         myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+        myLinkedList.append(6);
 
-
-        myLinkedList.prepend(1);
-        myLinkedList.getHead();
-
-
+        System.out.println(myLinkedList.get(3).value);
+        System.out.println();
         myLinkedList.printList();
 
     }
